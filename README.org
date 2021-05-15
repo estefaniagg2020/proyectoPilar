@@ -1,0 +1,178 @@
+* Diseño de Interfaces Web - Proyecto: Uso de estilos y multimedia
+Esta práctica tiene como objetivo la creación de un *sitio web estático*. Se utilizará CSS3 para crear el layout y la apariencia visual del sitio. Se utilizará la filosofía /mobile first/ y se usarán /media queries/ para hacer que el sitio tenga un diseño *responsivo*. Se utilizará CSS3 para el diseño de formularios. Por último, se preparará contenido *multimedia* (imágenes y vídeo) y se incorporará al sitio web.
+
+Se utilizará el gestor de contenidos *Jekyll*, que nos permitirá trabajar con *plantillas* y *fragmentos de código* reutilizables. En este enlace se muestran los [[https://pedroprieto.github.io/post/jekyllcms/][fundamentos del CMS Jekyll]].
+
+El repositorio utilizará el servicio de [[https://pages.github.com/][GitHub Pages]] para alojar el sitio. La rama principal del repositorio de trabajo será la rama ~gh-pages~: lo que se publique en esa rama estará disponible en un subdominio de ~github.io~ ([[https://interfacesweb-20-21.github.io/NOMBRE_REPOSITORIO_ALUMNO]])
+
+** Objetivos de aprendizaje
+- Crear y validar código CSS
+- Crear sitios web responsivos
+- Aprender los conceptos básicos de los Gestores Estáticos de Contenidos (/Static Site Generator/)
+- Diseñar interfaces web que sigan el patrón *Mobile First*
+- Preparar e incluir contenido multimedia (imágenes y vídeo) para su uso en sitios web, prestando atención a las *licencias* de uso
+- Utilizar un sistema de control de versiones en la creación de un sitio web
+
+** Archivos de la práctica
+El repositorio cuenta con una serie de archivos creados para trabajar con el gestor de contenidos Jekyll. *No se debe cambiar el nombre de dichos archivos*.
+
+- Archivo ~_config.yml~ - Contiene la [[https://jekyllrb.com/docs/configuration/][configuración de Jekyll]]. En él se debe *cambiar el parámetro* ~baseurl~ indicando el *nombre del repositorio asignado* al aceptar la tarea.
+- Archivos con las páginas del sitio - ~about.html~, ~contacto.html~, ~galeria.html~, ~index.html~, ~servicios.html~, ~contratacion.html~. Son los archivos con los *contenidos* de las distintas páginas que compondrán el sitio web.
+- Carpeta ~_includes~ - Contiene los *fragmentos de código* que conforman la plantilla del sitio.
+- Carpeta ~_layouts~ - Contiene la *plantilla* que se utilizará para el sitio web.
+- Carpeta ~_posts~ - Contiene los posts de un sitio Jekyll cuando se utiliza como blog. No se utilizará.
+- Carpeta ~_site~ - Esta carpeta se generará cuando Jekyll compile el sitio web. Contiene el sitio web *compilado*: es decir, su contenido se podría publicar directamente en un servidor web estático.
+
+También se incluye en el repositorio un conjunto de archivos que se utilizarán para realizar *tests*. Dichos tests se podrán utilizar para comprobar si la práctica se ha realizado correctamente. Los tests se podrán ejecutar el número de veces que sea necesario.
+
+** Requisitos de software
+Para poder realizar esta práctica y que funcione adecuadamente el entorno de test será necesario *instalar el siguiente software* en el equipo:
+- Entorno [[https://www.ruby-lang.org/en/downloads/][Ruby]] (necesario para ejecutar Jekyll).
+- En caso de realizar la instalación en [[https://rubyinstaller.org/][Windows]] se deberá instalar también el paquete *MSYS2* cuando se pregunte la opción en el proceso de instalación.
+
+** Desarrollo guiado por test
+Para realizar la práctica se seguirán los principios del [[https://es.wikipedia.org/wiki/Desarrollo_guiado_por_pruebas][Desarrollo Guiado por Test]]. Para ello se proporciona en el repositorio una serie de ficheros que permiten *ejecutar tests*. Dichos tests comprobarán que la web generada por Jekyll *es válida*. En concreto, se comprobarán:
+- Que no haya enlaces rotos
+- Que las imágenes estén correctamente cargadas
+- Que el HTML sea válido
+
+Es *obligatorio* pasar los tests para poder realizar la entrega de la práctica. Inicialmente el código proporcionado es válido. Se espera que los cambios introducidos sean también válidos.
+
+Los tests se ejecutarán automáticamente en la nube tras realizar una operación ~push~ en GitHub. En caso de que el test falle, se recibirá una  notificación. Se utilizará para ello el servicio [[https://docs.github.com/es/free-pro-team@latest/actions][GitHub Actions]] integrado en GitHub.
+
+** Preparación
+1. Instalar los requisitos de software indicados
+2. Abrir un terminal
+3. Ejecutar el comando ~gem install jekyll bundler~. Este comando instará las dependencias de Ruby para ejecutar Jekyll.
+4. Clonar el repositorio al equipo local mediante ~git clone~. *¡IMPORTANTE! El repositorio debe estar en una ruta del sistema de ficheros SIN ESPACIOS EN BLANCO ni caracteres NO INGLESES*. Por ejemplo: ~C:/NOMBRE_REPOSITORIO/~. Si no se sigue esta recomendación Jekyll no funcionará correctamente.
+5. Acceder a la carpeta del repositorio
+6. Ejecutar el comando ~bundle install~. Este comando instalará todas las librerías de Ruby necesarias para ejecutar Jekyll y realizar los tests.
+7. Editar el fichero ~_config.yml~ y cambiar la linea ~baseurl: "/cambiame"~ sustituyendo ~cambiame~ por el nombre del repositorio asignado.
+8. Ejecutar el comando ~bundle exec jekyll serve~ para lanzar el servidor de Jekyll. Una vez en marcha, se podrá acceder al sitio web a través de la URL http://localhost:4000/NOMBRE_REPOSITORIO/ (incluyendo la barra ~/~ final).
+9. Ejecutar el comando ~script/cibuild~ para lanzar los tests. Este comando podrá ejecutarse tantas veces como sea necesario. Por pantalla se mostrarán los tests que se pasan y los que no, de manera que se tendrá información sobre las acciones que hay que realizar.
+   - *NOTA*: en sistemas Windows los tests no funcionan, ya que se necesita una biblioteca específica de Linux. Por tanto, solo se podrán ejecutar los tests en GitHub Actions al realizar un ~push~. Otra opción es utilizar una máquina virtual Linux.
+   
+Para lanzar un sitio web basado en Jekyll es necesario *compilarlo* primero. El proceso de compilación se encarga de *crear el sitio web* completo a partir de:
+- Archivos de *plantillas* (/layouts/)
+- Archivos de *páginas*
+- Archivos de *fragmentos de código* (/includes/)
+- Archivos de *posts*
+
+Para evitar tener que realizar el proceso de compilación cada vez que se haga un cambio en uno de esos archivos, Jekyll proporciona un servidor web que *automáticamente* actualiza los cambios realizados. Ese servidor se puede poner en marcha ejecutando:
+
+#+begin_src sh
+bundle exec jekyll serve
+#+end_src
+
+Una vez activado el servidor web, se puede acceder al sitio a través de http://localhost:4000/NOMBRE_REPOSITORIO/. 
+
+GitHub ofrece integración automática con Jekyll: cuando se suben los archivos al repositorio en GítHub se publican automáticamente en la URL [[https://interfacesweb-20-21.github.io/NOMBRE_REPOSITORIO_ALUMNO]]. *No es necesario subir los archivos compilados* (por eso la carpeta ~_site~ está excluida en el archivo ~.gitignore~).
+
+** Tareas a realizar
+Se debe crear un sitio web con *temática libre*. Se pueden utilizar las ideas y recursos creados en prácticas anteriores (guía de estilos, biblioteca de clases, ideas de prototipo,...) o crear un sitio completamente nuevo. El sitio estará compuesto por las siguientes páginas:
+- Página principal (~index.html~)
+- Página de servicios ofrecidos (~servicios.html~)
+- Página de formulario de contratación de servicios (~contratacion.html~)
+- Página de localización y contacto (~contacto.html~)
+- Página de galería de imágenes (~galeria.html~)
+- Página de información sobre el sitio (~about.html~)
+
+*** Layout del sitio
+Se debe realizar el layout del sitio. Jekyll permite utilizar *fragmentos de código* (/includes/) para poder reutilizarlos en distintos archivos. De esta manera no se tendrán que copiar los componentes comunes de un sitio (cabecera, pie, menús de navegación,...) en todos los archivos HTML.
+
+**** Componentes
+Todas las páginas tendrán los siguientes componentes:
+- Cabecera (~_includes/header.html~)
+- Pie (~_includes/footer.html~)
+- Aside (~_includes_aside.html~)
+- Navegación (~_includes/nav.html~). El código incluido genera automáticamente una lista con los enlaces a las distintas páginas del sitio. Si se quiere personalizar la lista (ordenarla, hacer referencia a una página en concreto) es necesario *estudiar adecuadamente cómo se generan los enlaces*. Para crear un enlace manual a la página ~about.html~ habrá que hacer referencia a ~{{site.baseurl}}/about}}~. Esto es así porque el sitio está publicado en una subcarpeta que hace referencia al nombre del repositorio. Dicha subcarpeta está referenciada por la variable ~{{site.baseurl}}~; por otro lado, las páginas se publican en la ruta definida en la propiedad ~permalink~ de su /front matter/, y en el caso de la página ~about.html~ su permalink es ~/about~.
+
+El *contenido específico* de cada página del sitio se creará en el archivo correspondiente a dicha página.
+
+**** Características
+- Los componentes del layout deben aparecer en el mismo sitio en todas las páginas
+- Se debe seguir la filosofía *Mobile First* en el diseño
+- Se deben utilizar hojas CSS externas (carpeta ~css/~)
+- Para el layout se debe utilizar *CSS Grid* o *Flexbox*
+- La navegación debe ser *consistente* y debe mostrar al usuario en qué apartado está en todo momento. Se puede utilizar una o varias técnicas, como menús, migas de pan,...
+- El layout debe utilizar principalmente *unidades relativas* para adaptarse correctamente a todo tipo y tamaño de pantallas
+- Las páginas serán *responsive*. Se utilizarán *media queries*. Las páginas deben ofrecer *3 opciones distintas de visualización*:
+  - Dispositivos móviles (<400px)
+  - Dispositivos de tamaño medio (tablets) (<768px)
+  - Resto de dispositivos (monitores, pantallas grandes) (>768px)
+
+*** Estilos CSS
+- La apariencia del sitio estará *personalizada*
+- Los estilos deben ser *homogéneos* en todas las páginas del sitio. Se pueden utilizar *colores*, *tipos de letra*, *iconos*, *animaciones* y *logos*.
+- Se aconseja el uso de *clases CSS*
+
+*** Página principal
+- Debe mostrar *nombre, logo e información principal del sitio*.
+- Debe incluir *tres vídeos* que se mostrarán mediante etiquetas ~<video>~ de HTML5.
+  - Los vídeos elegidos estarán relacionados con la temática del sitio.
+  - Los vídeos deben utilizar formatos compatibles con todos los navegadores.
+  - En caso de utilizar vídeos de terceros, se tendrá que comprobar que *disponen de la licencia necesaria* para ser usados.
+  - Algunos sitios donde conseguir vídeos:
+    - [[https://commons.wikimedia.org/wiki/Main_Page][Wikimedia]]
+    - [[https://pixabay.com/es/][Pixabay]]
+ 
+*** Página de servicios ofrecidos
+- Debe mostrar información relacionada con los servicios ofrecidos en el sitio web.
+- Se puede organizar como se desee: productos, categorías, etc.
+
+*** Página de formulario de contratación de servicios
+- Debe incorporar un formulario HTML5
+- Se utilizarán *al menos 15 controles*
+- Se utilizarán campos de distinto tipo: ~select~, ~radio~, ~checkbox~, ~textarea~,...
+- Se utilizarán los tipos de campos HTML5: ~date~, ~email~, ~number~,...
+- Los campos estarán *alineados*
+- Se deben usar:
+  - Etiquetas ~label~
+  - Etiquetas ~fieldset~
+  - Atributos ~placeholder~
+- Se debe utilizar ~flexbox~ para alinear etiquetas y campos.
+- El formulario será *responsivo*:
+  - *Dispositivos móviles*
+    - No se mostrarán las etiquetas, con la excepción de los campos ~radio~ y ~checkbox~
+    - Los campos deben ocupar todo el ancho de la pantalla (con algún margen)
+  - *Tablets*
+    - Las etiquetas deben aparecer *encima* de los campos.
+    - *Todas las etiquetas* serán visibles
+    - El ancho de los controles ocupará un *80% del ancho de la pantalla*
+    - El formulario aparecerá *centrado* en la pantalla
+  - *Pantallas grandes*
+    - Las etiquetas se mostrarán *a la izquierda* de los campos, *alineadas a la izquierda*
+    - El formulario tendrá una *anchura máxima de un 70% del ancho de la pantalla*
+    - El formulario aparecerá *centrado* en la pantalla
+
+*** Página de contacto y localización
+- Debe mostrar la información de contacto (dirección, teléfono, email,...)
+- Debe mostrar *un mapa* con la localización
+- El aspecto será *responsivo*:
+  - *Dispositivos móviles*
+    - Se mostrará arriba la información de contacto y abajo el mapa
+  - *Tablets y pantallas grandes*
+    - Se mostrará la información de contacto a la izquierda y el mapa a la derecha
+
+*** Página de galería de imágenes
+- Dispondrá de una galería de imágenes dispuestas a modo de *rejilla*.
+- Las imágenes se mostrarán a *baja resolución*.
+- Al pulsar en una imagen se mostrará la imagen *a resolución completa*.
+- Opcional: se puede mostrar la imagen a resolución completa utilizando alguna librería tipo [[https://www.w3schools.com/howto/howto_js_lightbox.asp][lightbox]] (requiere JavaScript).
+- Las imágenes estarán relacionadas con la temática del sitio.
+- Se utilizarán formatos compatibles con todos los navegadores.
+- En caso de utilizar imágenes de terceros, se tendrá que comprobar que *disponen de la licencia necesaria* para ser usadas.
+
+*** Página /about us/
+Debe mostrar la información del *autor* con *nombre*, *descripción* y *foto*.
+
+** Formato de la entrega
+- Cada alumno dispondrá de un repositorio en GitHub para su trabajo personal. Dicho repositorio se creará automáticamente al hacer clic en el enlace y aceptar la tarea (/assignment/).
+- Todos los archivos de la práctica se guardarán en el repositorio y se subirán a GitHub periódicamente. Es conveniente ir subiendo los cambios aunque no sean definitivos.
+- Cada vez que se suban cambios al repositorio de GitHub se producirán dos acciones:
+  - En primer lugar, se ejecutarán los tests automáticos de validación en el servicio [[https://docs.github.com/es/free-pro-team@latest/actions][GitHub Actions]].
+  - Se publicará el sitio Jekyll automáticamente en la URL asignada al repositorio ([[https://interfacesweb-20-21.github.io/NOMBRE_REPOSITORIO_ALUMNO]])
+- Para cualquier tipo de *duda o consulta* se pueden abrir ~Issues~ haciendo referencia al profesor mediante el texto ~@pedroprieto~ dentro del texto del ~Issue~.
+- Una vez *finalizada* la tarea se debe crear un ~Issue~ en el repositorio haciendo referencia al profesor incluyendo el texto ~@pedroprieto~ dentro del ~Issue~.
+
+

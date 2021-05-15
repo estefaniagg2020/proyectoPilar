@@ -1,0 +1,12 @@
+#!/usr/bin/env bash
+set -e # halt script on error
+
+# Compilar el sitio con jekyll
+# Cambio baseurl para que los enlaces funcionen en los test
+bundle exec jekyll build --baseurl ""
+
+#Ejecutar los tests con htmlproofer sobre el sitio generado. Fuente: https://jekyllrb.com/docs/continuous-integration/travis-ci/
+# Configuración:
+# --asume-extension. Fuente: https://github.com/gjtorikian/html-proofer#using-with-jekyll
+# --check_html: https://github.com/gjtorikian/html-proofer#configuration
+bundle exec htmlproofer --assume-extension --check_html ./_site

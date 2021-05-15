@@ -1,0 +1,288 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <title>Página principal</title>
+    <link rel="stylesheet" href="assets/css/style.css" />
+    <!-- jquery -->
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"
+      integrity="sha512-bLT0Qm9VnAYZDflyKcBaQ2gg0hSYNQrJ8RilYldYQ1FxQYoCLtUjuuRuZo+fjqhx/qtq/1itJ0C2ejDxltZVFg=="
+      crossorigin="anonymous"
+    ></script>
+    <!-- iconos -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css"
+      integrity="sha512-+4zCK9k+qNFUR5X+cKL9EIR+ZOhtIloNl9GIKS57V1MyNsYpYcUrUeQc9vNfzsWfV28IaLL3i96P9sdNyeRssA=="
+      crossorigin="anonymous"
+    />
+    <!-- Letras -->
+    <link rel="preconnect" href="https://fonts.gstatic.com" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Bad+Script&family=Comic+Neue&family=Damion&family=Delius&family=Marck+Script&display=swap"
+      rel="stylesheet"
+    />
+    <!-- bootstrap -->
+    <link
+      rel="stylesheet"
+      href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+      integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm"
+      crossorigin="anonymous"
+    />
+
+    <meta name="author" content="" />
+    <meta name="description" content="" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  </head>
+
+  <body>
+    <header><div class="contenido-header">
+  <img src="assets/images/logo.png" alt="" id="logo-header">
+  <div>
+    <h1>Lernen</h1>
+    <h2>Cursos online</h2>
+  </div>
+  <i class="fas fa-list-ul fa-2x" id="menu-header"></i>
+</div>
+
+</header>
+
+    <nav><div class="contendor-navegacion-header" id="contendor-navegacion-header">
+    <ul class="navegacion-header">
+        
+        <li class="lista">
+            <!-- Se aplica la clase "selected" para indicar el enlace de navegación que se está visitando -->
+            <a href="/proyecto-css-estefaniagg2020/about" >Nosotros</a>
+        </li>
+        
+        <li class="lista">
+            <!-- Se aplica la clase "selected" para indicar el enlace de navegación que se está visitando -->
+            <a href="/proyecto-css-estefaniagg2020/contacto" >Contacto</a>
+        </li>
+        
+        <li class="lista">
+            <!-- Se aplica la clase "selected" para indicar el enlace de navegación que se está visitando -->
+            <a href="/proyecto-css-estefaniagg2020/contratacion" >Contratación de servicios</a>
+        </li>
+        
+        <li class="lista">
+            <!-- Se aplica la clase "selected" para indicar el enlace de navegación que se está visitando -->
+            <a href="/proyecto-css-estefaniagg2020/galeria" >Galería de imágenes</a>
+        </li>
+        
+        <li class="lista">
+            <!-- Se aplica la clase "selected" para indicar el enlace de navegación que se está visitando -->
+            <a href="/proyecto-css-estefaniagg2020/index"  class="selected" >Página principal</a>
+        </li>
+        
+        <li class="lista">
+            <!-- Se aplica la clase "selected" para indicar el enlace de navegación que se está visitando -->
+            <a href="/proyecto-css-estefaniagg2020/servicios" >Página de servicios</a>
+        </li>
+        
+    </ul>
+    
+</div></nav>
+
+    <aside></aside>
+
+    <section><div class="contenedor-index">
+  <div class="contenedor">
+    <!-- slider -->
+    <div class="slider">
+      <div class="slides">
+        <input type="radio" name="radio-btn" id="radio1" />
+        <input type="radio" name="radio-btn" id="radio2" />
+        <input type="radio" name="radio-btn" id="radio3" />
+        <input type="radio" name="radio-btn" id="radio4" />
+        <!-- imagenes -->
+
+        <div class="slide first">
+          <img src="assets/images/teclado.jpg" alt="" id="imagen-primera" />
+        </div>
+        <div class="slide">
+          <img src="assets/images/coding.jpg" alt="" />
+        </div>
+        <div class="slide">
+          <img src="assets/images/estudio.jpg" alt="" />
+        </div>
+        <div class="slide">
+          <img src="assets/images/hombre-pc.jpg" alt="" />
+        </div>
+      </div>
+      <!-- navegacion automatica -->
+      <div class="navigation-auto">
+        <div class="auto-btn1"></div>
+        <div class="auto-btn2"></div>
+        <div class="auto-btn3"></div>
+        <div class="auto-btn4"></div>
+      </div>
+      <!-- fin navegacion automatica -->
+      <!-- navegacion manual -->
+      <!--<div class="navigation-manual">
+        <label for="radio1" class="manual-btn"></label>
+        <label for="radio2" class="manual-btn"></label>
+        <label for="radio3" class="manual-btn"></label>
+        <label for="radio4" class="manual-btn"></label>
+      </div>-->
+
+      <!-- fin navegacion manual -->
+    </div>
+
+    <!-- fin slider -->
+  </div>
+  <!-- Texto que se escribe dentro del slider -->
+  <div class="texto">
+    <p class="texto-automatico"></p>
+  </div>
+</div>
+
+<div class="main">
+  <main>
+    <div class="contenedor-main">
+      <h2>¿Qué es Lernen?</h2>
+      <p class="parrafo-main">
+        Hay infinidad de plataformas online para aprender, pero en la mayoría da
+        igual tu nivel, el curso es el mismo.
+      </p>
+      <p>
+        Con nosostros eso se acabó. Cursos totalmente personalizados a tus
+        necesidades
+      </p>
+      <p>
+        Desarrollada por estudiantes para estudiantes. Paga solo por lo que
+        necesitas aprender, accede a multitud de contenido gratuito
+      </p>
+    </div>
+    <div class="contenido-color">
+      <img src="assets/images/fucsia.jpg" alt="" />
+      <p>Diseñamos cursos para ti</p>
+
+      <p>Primer mes gratuito.</p>
+    </div>
+
+    <div class="grupo-video">
+      <div class="grupo-monitor">
+        <div class="television">
+          <img src="assets/images/monitor.jpg" alt="" />
+        
+          <div>
+            <video
+              width=""
+              height=""
+              controls="controls"
+              autoplay="autoplay"
+              loop="loop"
+            >
+              <source src="assets/images/csharp.webm" type="video/webm" />
+              <source src="assets/images/csharp.mp4" type="video/mp4" />
+              <!-- <source src="assets/images/c#.ogg" type="video/ogg" /> -->
+              el navegador no soporta la etiqueta video.
+            </video>
+          </div>
+        </div>
+        
+        <p>
+          ¿Quieres aprender a programar en c#? Prueba nuestro curso de c# junto
+          con Asp.net
+        </p>
+        <input type="button" value="Pedir informacion" />
+      </div>
+      <div class="grupo-monitor">
+        <div class="television">
+          <img src="assets/images/monitor.jpg" alt="" />
+        
+          <div>
+            <video
+              width=""
+              height=""
+              controls="controls"
+              autoplay="autoplay"
+              loop="loop"
+            >
+              <source src="assets/images/css.webm" type="video/webm" />
+              <source src="assets/images/css.mp4" type="video/mp4" />
+              <!-- <source src="assets/images/c#.ogg" type="video/ogg" /> -->
+              el navegador no soporta la etiqueta video.
+            </video>
+          </div>
+        </div>
+        <p>
+          ¿Te encanta el diseño pero sientes que te falta la base?¿Te encantaría
+          saber maquetar? Nuestro curso de Css es para ti.
+        </p>
+        <input type="button" value="Pedir informacion" />
+      </div>
+      <div class="grupo-monitor">
+        <div class="television">
+          <img src="assets/images/monitor.jpg" alt="" />
+        
+          <div>
+            <video
+              width=""
+              height=""
+              controls="controls"
+              autoplay="autoplay"
+              loop="loop"
+            >
+              <source src="assets/images/js.webm" type="video/webm" />
+              <source src="assets/images/js.mp4" type="video/mp4" />
+              <!-- <source src="assets/images/c#.ogg" type="video/ogg" /> -->
+              el navegador no soporta la etiqueta video.
+            </video>
+          </div>
+        </div>
+        <p>
+          JavaScript es fundamental en cualquier proyecto. No lo dudes y pregunta
+          por nuestro curso
+          <span class="strong">youtube</span>
+        </p>
+        <input type="button" value="Pedir informacion" />
+      </div>
+    </div>
+  </main>
+</div>
+</section>
+
+    <footer><div class="contenido-footer">
+  <div>
+    <img src="assets/images/logo.png" alt="" id="logo" />
+  </div>
+  <div>
+    <h1>Lernen</h1>
+    <h2>Cursos online</h2>
+  </div>
+  <div class="navegacion-footer">
+    <nav>
+      <ul>
+        <li>About</li>
+        <li>contacto</li>
+        <li>Contratacion</li>
+        <li>Galeria</li>
+        <li>Servicios</li>
+      </ul>
+    </nav>
+  </div>
+</div>
+</footer>
+
+    <!-- bootstrap js -->
+    <script
+      src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
+      integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"
+      integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"
+      integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
+      crossorigin="anonymous"
+    ></script>
+    <script src="assets/js/main.js"></script>
+  </body>
+</html>

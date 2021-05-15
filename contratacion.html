@@ -1,0 +1,181 @@
+---
+layout: principal
+title: Contratación de servicios
+permalink: /contratacion
+---
+
+<div class="contenedor-formulario">
+  <form action="" id="formulario">
+    <fieldset>
+      <h3>¿Necesitas información?</h3>
+      <div class="form-group">
+        <div class="label">
+          <label for="name">Nombre</label>
+        </div>
+        <div class="input">
+          <input
+            type="text"
+            id="name"
+            name="name"
+            placeholder="Nombre"
+            required
+          />
+        </div>
+      </div>
+      <div class="form-group">
+        <div class="label">
+          <label for="last-name">Apellidos</label>
+        </div>
+        <div class="input">
+          <input type="text" id="last-name" placeholder="Apellido" />
+        </div>
+      </div>
+      <div class="form-group">
+        <div class="label">
+          <label for="email">Email</label>
+        </div>
+        <div class="input">
+          <input
+            type="email"
+            id="email"
+            name="email"
+            placeholder="Email"
+            required
+          />
+        </div>
+      </div>
+      <div class="form-group">
+        <div class="label">
+          <label for="birthday">Fecha de nacimiento</label>
+        </div>
+        <div class="input">
+          <input
+            type="date"
+            id="birthday"
+            name="birthday"
+            placeholder="Fecha de nacimiento"
+          />
+        </div>
+      </div>
+      <!-- fin de datos personales -->
+      <!-- datos tecnicos -->
+      <div class="contenedor-radios">
+        
+          <div class="form-group-chek">
+            <div class="">
+              <h5 for="" class="label-display">
+                Selecciona un rol
+              </h5>
+            </div>
+            <div class="form-group-radio">
+              <div class="label">
+                <label for="student" class="label-display">Estudiante</label>
+              </div>
+              <div class="input">
+                <input type="radio" id="student" name="rol" />
+              </div>
+            </div>
+            <div class="form-group-radio">
+              <div class="label">
+                <label for="developtment" class="label-display"
+                  >Programador</label
+                >
+              </div>
+              <div class="input">
+                <input type="radio" id="developtment" name="rol" checked />
+              </div>
+            </div>
+            <div class="form-group-radio">
+              <div class="label">
+                <label for="others" class="label-display">Otros</label>
+              </div>
+              <div class="input">
+                <input type="radio" id="others" name="rol" />
+              </div>
+            </div>
+          </div>
+        
+        <!-- Checkbox -->
+
+        <div class="form-group-chek">
+            <div class="">
+                <h5 for="" class="label-display">
+                  Elige tu nivel
+                </h5>
+              </div>
+          <div class="form-group-radio">
+            <div class="label">
+              <label for="basic" class="label-display">Básico</label>
+            </div>
+            <div class="input">
+              <input
+                type="checkbox"
+                name="level"
+                value="basic"
+                id="basic"
+                checked
+              />
+            </div>
+          </div>
+          <div class="form-group-radio">
+            <div class="label">
+              <label for="medium" class="label-display">Medio</label>
+            </div>
+            <div class="input">
+              <input type="checkbox" name="level" value="medium" id="medium" />
+            </div>
+          </div>
+          <div class="form-group-radio">
+            <div class="label">
+              <label for="advanced" class="label-display">Avanzado</label>
+            </div>
+            <div class="input">
+              <input
+                type="checkbox"
+                name="level"
+                value="advanced"
+                id="advanced"
+              />
+            </div>
+          </div>
+        </div>
+      </div>
+      <!-- Selects -->
+      <div class="form-group-chek">
+        <div class="">
+          <label for="select" class="label-display" id="seleccion-select">Selecciona un curso:</label>
+        </div>
+        <div class="input">
+          <select name="language" id="language">
+            <optgroup label="Lenguaje">
+              <option value="html" readonly>HTML</option>
+              <option value="css">CSS</option>
+              <option value="js">JavaScript</option>
+              <option value="php">Php</option>
+              <option value="python">Python</option>
+              <option value="cdm">CDM</option>
+              <option value="c#">C#</option>
+            </optgroup>
+          </select>
+        </div>
+      </div>
+      <div class="form-group-chek textarea">
+        <div class="label">
+          <label for="comments" class="" id="seleccion-textarea"
+            >¿Necistas añadir algo?</label
+          >
+        </div>
+        <div class="input">
+          <textarea
+            name="comments"
+            id="comments"
+            cols="30"
+            rows="10"
+            placeholder="¿Necesitas añadir algo?"
+          ></textarea>
+        </div>
+      </div>
+      <input type="button" value="Enviar" class="button-formulario">
+    </fieldset>
+  </form>
+</div>

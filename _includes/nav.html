@@ -1,0 +1,11 @@
+<div class="contendor-navegacion-header" id="contendor-navegacion-header">
+    <ul class="navegacion-header">
+        {% for p in site.html_pages %}
+        <li class="lista">
+            <!-- Se aplica la clase "selected" para indicar el enlace de navegación que se está visitando -->
+            <a href="{{site.baseurl}}{{p.url}}" {% if page.url == p.url %} class="selected" {% endif %}>{{p.title}}</a>
+        </li>
+        {% endfor %}
+    </ul>
+    
+</div>

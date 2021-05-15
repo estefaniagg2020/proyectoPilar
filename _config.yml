@@ -1,0 +1,20 @@
+title: DIW - Proyecto de CSS
+email: example@domain.com
+description: > # this means to ignore newlines until "baseurl:"
+  Sitio web creado para realizar prácticas del módulo de
+  Diseño de Interfaces Web.
+  IES Mare Nostrum - Alicante
+
+# URL base para el repositorio
+url: "http://interfacesweb-20-21.github.io"
+
+# TODO: Cambiar para indicar el nombre del repositorio
+# El sitio se publicará en http://interfacesweb-19-20.github.io/baseurl
+baseurl: "/proyecto-css-estefaniagg2020"
+
+# Build settings
+markdown: kramdown
+
+# Fuente: https://jekyllrb.com/docs/continuous-integration/travis-ci/#3-configuring-your-travis-builds
+exclude: [vendor]
+
